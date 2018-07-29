@@ -1,7 +1,5 @@
 node default {
-  file {'/root/README':
-    ensure  => file,
-    content => 'This is a README',
-    owner  => 'root',
     }
+node 'puppet.wheezylab.net' {
+  include role::master_server
 }
