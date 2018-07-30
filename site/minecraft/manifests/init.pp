@@ -25,7 +25,7 @@ file { "${install_dir}/eula.txt":
 file { '/etc/systemd/system/minecraft.service':
   ensure  => file,
   content  => epp{'minecraft/minecraft.service',{
-  installdir  =>  $install_dir,
+  install_dir  =>  $install_dir
   }}
   }
   
