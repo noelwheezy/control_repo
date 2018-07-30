@@ -26,7 +26,7 @@ file { '/etc/systemd/system/minecraft.service':
   ensure  => file,
   content  => epp{'minecraft/minecraft.service',{
   installdir  =>  $install_dir,
-  }
+  }}
   }
   
 service { 'minecraft':
