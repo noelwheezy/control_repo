@@ -17,14 +17,16 @@ package { 'default-jre':
   ensure  => present,
   }
   
-file { "${install_dir}/"ula.txt":
+file { "${install_dir}/"eula.txt":
   ensure  => file,
   content => 'eula=true',
   }
   
 file { '/etc/systemd/system/minecraft.service':
   ensure  => file,
-  source  => 'puppet:///modules/minecraft/minecraft.service',
+  content  => epp{'minecraft/minecraft.service',{
+  installdir  =>  $install_dir,
+  }
   }
   
 service { 'minecraft':
